@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CardItem = () => {
+const CardNone = () => {
     return (
         <div className="p-6">
             <div className="p-10 border border-gray-300 rounded-md text-gray-500">
@@ -10,4 +10,4 @@ const CardItem = () => {
     );
 }
 
-export default CardItem
+export default CardNone
