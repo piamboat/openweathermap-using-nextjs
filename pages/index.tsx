@@ -6,11 +6,15 @@ import openweather from '../pages/api/openweather'
 import Swal from 'sweetalert2'
 
 export default function Home() {
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState<{
+    id: number;
+    time: string;
+    data: any;
+  }[]>([])
   const [city, setCity] = useState('')
   const [data, setData] = useState({})
 
-  const onCitySearch = async city => {
+  const onCitySearch = async (city: string) => {
     // set current searching term
     setCity(city)
     
@@ -32,7 +36,7 @@ export default function Home() {
       const dateObj = new Date()
       const time = `${dateObj.getHours()}:${dateObj.getMinutes()}`
       const newCard = { id, time, data };
-      
+
       setCards([ newCard, ...cards ]);
     }
     catch

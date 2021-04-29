@@ -9,7 +9,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onCitySearch }) => {
     const [city, setCity] = useState('')
 
-    const onSearchSubmit = city => {
+    const onSearchSubmit = (city: string) => {
         onCitySearch(city);
         setCity('');
     }
