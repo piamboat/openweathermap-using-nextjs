@@ -1,6 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const CardItem = ({ card }) => {
+interface CardItemProps {
+    card: {
+        id: number;
+        data: {
+            name: string;
+            weather: {
+                main: string;
+                description: string;
+                icon: string;
+            }[];
+            main: {
+                temp: number;
+            }
+        };
+        time: string;
+    };
+}
+
+const CardItem: React.FC<CardItemProps> = ({ card }) => {
     //console.log('card data: ', card.data)
     const data = card.data
     

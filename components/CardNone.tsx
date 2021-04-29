@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CardNone = () => {
+const CardNone: React.FC = () => {
     return (
         <div className="p-6">
             <div className="p-10 border border-gray-300 rounded-md text-gray-500">

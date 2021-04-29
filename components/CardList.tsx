@@ -2,8 +2,27 @@ import React from 'react'
 import CardItem from './CardItem'
 import CardNone from './CardNone'
 
-const CardList = ({ cards, onClearSubmit }) => {
-    let listOfCards = <CardNone /> 
+interface CardListProps {
+    cards: {
+        id: number;
+        data: {
+            name: string;
+            weather: {
+                main: string;
+                description: string;
+                icon: string;
+            }[];
+            main: {
+                temp: number;
+            }
+        };
+        time: string;
+    }[];
+    onClearSubmit: () => void;
+}
+
+const CardList: React.FC<CardListProps> = ({ cards, onClearSubmit }) => {
+    let listOfCards: JSX.Element | JSX.Element[] = <CardNone />
     if (cards.length > 0) {
         listOfCards = cards.map( card => {
             return <CardItem key={card.id} card={card} />
